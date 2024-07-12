@@ -1,0 +1,74 @@
+.page-container,
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.page-container {
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.form-container,
+.data-container {
+  width: 300px;
+}
+
+.input-field,
+.submit-button,
+.data-container {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.input-field {
+  border: 1px solid #ccc;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.submit-button:disabled {
+  background-color: #999;
+  color: #555;
+  cursor: not-allowed; 
+  position: relative;
+}
+
+.submit-button:disabled::after {
+  content: '';
+  display: block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 4px solid #fff;
+  border-color: #fff transparent #fff transparent;
+  animation: spin 1.2s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.data-container {
+  color: white;
+  background-color: #111827;
+  padding: 16px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); 
+}
+
+.aborted {
+    color: white;
+}
